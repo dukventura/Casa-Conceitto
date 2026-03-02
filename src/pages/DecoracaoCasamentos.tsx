@@ -55,12 +55,12 @@ export const DecoracaoCasamentos = () => {
   }, []);
 
   const weddingStyles = [
-    { title: 'Ao Ar Livre', img: 'https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Casamento-ao-ar-livre-0001.jpg' },
-    { title: 'Contemporâneo', img: 'https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Galeria-2-scaled.jpg' },
-    { title: 'Clássico', img: 'https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Galeria-1-scaled.jpg' },
-    { title: 'Minimalista', img: 'https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Sessao-2.jpeg' },
-    { title: 'Temático', img: 'https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Hero-2.jpeg' },
-    { title: 'Elopement Wedding', img: 'https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Sessao-informacoes-importantes-scaled.jpg' },
+    { title: 'Ao Ar Livre', img: '/assets/images/projeto-1.jpg' },
+    { title: 'Contemporâneo', img: '/assets/images/galeria-2.jpg' },
+    { title: 'Clássico', img: '/assets/images/galeria-1.jpg' },
+    { title: 'Minimalista', img: '/assets/images/sessao-2.jpg' },
+    { title: 'Temático', img: '/assets/images/hero-2.jpg' },
+    { title: 'Elopement Wedding', img: '/assets/images/sessao-informacoes.jpg' },
   ];
 
   return (
@@ -69,7 +69,7 @@ export const DecoracaoCasamentos = () => {
       <section className="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Hero-2.jpeg" 
+            src="/assets/images/hero-2.jpg" 
             alt="Decoração de Casamento" 
             className="w-full h-full object-cover opacity-30 grayscale-[0.2]"
             referrerPolicy="no-referrer"
@@ -108,14 +108,14 @@ export const DecoracaoCasamentos = () => {
           <div className="relative flex justify-center reveal">
             <div className="relative w-full max-w-md aspect-square">
               <img 
-                src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Galeria-1-scaled.jpg" 
+                src="/assets/images/galeria-1.jpg" 
                 alt="Detalhe" 
                 className="w-full h-full object-cover rounded-full shadow-2xl"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute -bottom-10 -right-10 w-48 h-48 rounded-full overflow-hidden border-8 border-background shadow-xl hidden md:block">
                 <img 
-                  src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Galeria-3.jpg" 
+                  src="/assets/images/galeria-3.jpg" 
                   alt="Detalhe 2" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -161,7 +161,7 @@ export const DecoracaoCasamentos = () => {
             <div className="reveal">
               <div className="rounded-t-full overflow-hidden aspect-[4/5] mb-12 shadow-2xl relative group">
                 <img 
-                  src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Sessao-2.jpeg" 
+                  src="/assets/images/sessao-2.jpg" 
                   alt="Personalização" 
                   className="w-full h-full object-cover parallax-arch transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
@@ -176,7 +176,7 @@ export const DecoracaoCasamentos = () => {
             <div className="reveal md:mt-32">
               <div className="rounded-t-full overflow-hidden aspect-[4/5] mb-12 shadow-2xl relative group">
                 <img 
-                  src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Sessao-informacoes-importantes-scaled.jpg" 
+                  src="/assets/images/sessao-informacoes.jpg" 
                   alt="Projeto 3D" 
                   className="w-full h-full object-cover parallax-arch transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
@@ -227,7 +227,7 @@ export const DecoracaoCasamentos = () => {
             <div className="reveal flex justify-center">
               <div className="relative bg-primary p-12 rounded-[3rem] text-center max-w-sm shadow-2xl">
                 <img 
-                  src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Awards-2023.png" 
+                  src="/assets/images/awards-2023.png" 
                   alt="Casamentos Awards 2023" 
                   className="w-48 mx-auto mb-8 invert"
                   referrerPolicy="no-referrer"
@@ -282,7 +282,7 @@ export const DecoracaoCasamentos = () => {
             <div className="reveal order-1 lg:order-2 flex justify-center">
               <div className="relative">
                 <img 
-                  src="https://casaconceittoeventos.com.br/wp-content/uploads/2022/12/faa858bf-c91d-483c-b20f-9c21ea111741.jpg" 
+                  src="/assets/images/carla-mattos.jpg" 
                   alt="Carla Mattos" 
                   className="rounded-[4rem] shadow-2xl w-full max-w-md aspect-[3/4] object-cover"
                   referrerPolicy="no-referrer"

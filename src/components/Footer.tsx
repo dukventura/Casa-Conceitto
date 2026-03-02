@@ -9,7 +9,7 @@ export const Footer = () => {
           {/* Address */}
           <div className="reveal">
             <img 
-              src="https://casaconceittoeventos.com.br/wp-content/uploads/2022/03/logocasaconceitoseventos-fundotransparente-rosa-01.png" 
+              src="/assets/images/logo.png" 
               alt="Casa Conceitto Logo" 
               className="h-16 w-auto object-contain mb-8 brightness-0 invert"
               referrerPolicy="no-referrer"

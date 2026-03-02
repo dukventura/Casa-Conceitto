@@ -29,7 +29,7 @@ export const Header = () => {
         <div className="flex items-center">
           <Link to="/" className="h-16 w-auto flex items-center">
             <img 
-              src="https://casaconceittoeventos.com.br/wp-content/uploads/2022/03/logocasaconceitoseventos-fundotransparente-rosa-01.png" 
+              src="/assets/images/logo.png" 
               alt="Casa Conceitto Logo" 
               className="h-full w-auto object-contain"
               referrerPolicy="no-referrer"

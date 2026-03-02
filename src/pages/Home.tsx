@@ -76,7 +76,7 @@ export const Home = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Hero-2.jpeg" 
+            src="/assets/images/hero-2.jpg" 
             alt="Mesa Posta Casa Conceitto" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -128,7 +128,7 @@ export const Home = () => {
           </div>
           <div className="relative reveal">
             <img 
-              src="https://casaconceittoeventos.com.br/wp-content/uploads/2022/12/faa858bf-c91d-483c-b20f-9c21ea111741.jpg" 
+              src="/assets/images/carla-mattos.jpg" 
               alt="Carla Mattos - Casa Conceitto" 
               className="rounded-[3rem] shadow-2xl w-full h-[600px] object-cover object-top"
               referrerPolicy="no-referrer"
@@ -143,7 +143,7 @@ export const Home = () => {
       {/* IMAGE BREAK SECTION */}
       <section className="h-[60vh] relative overflow-hidden reveal">
         <img 
-          src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Sessao-2.jpeg" 
+          src="/assets/images/sessao-2.jpg" 
           alt="Decoração de Casamento Imersiva" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
@@ -238,10 +238,10 @@ export const Home = () => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4 reveal">
-            <img src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Casamento-ao-ar-livre-0001.jpg" alt="Projeto 1" className="rounded-3xl h-64 w-full object-cover" referrerPolicy="no-referrer" />
-            <img src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Casamento-ao-ar-livre-0002-scaled.jpg" alt="Projeto 2" className="rounded-3xl h-64 w-full object-cover mt-8" referrerPolicy="no-referrer" />
-            <img src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Casamento-ao-ar-livre-0003-scaled.jpg" alt="Projeto 3" className="rounded-3xl h-64 w-full object-cover -mt-8" referrerPolicy="no-referrer" />
-            <img src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Casamento-ao-ar-livre-0004.jpg" alt="Projeto 4" className="rounded-3xl h-64 w-full object-cover" referrerPolicy="no-referrer" />
+            <img src="/assets/images/projeto-1.jpg" alt="Projeto 1" className="rounded-3xl h-64 w-full object-cover" referrerPolicy="no-referrer" />
+            <img src="/assets/images/projeto-2.jpg" alt="Projeto 2" className="rounded-3xl h-64 w-full object-cover mt-8" referrerPolicy="no-referrer" />
+            <img src="/assets/images/projeto-3.jpg" alt="Projeto 3" className="rounded-3xl h-64 w-full object-cover -mt-8" referrerPolicy="no-referrer" />
+            <img src="/assets/images/projeto-4.jpg" alt="Projeto 4" className="rounded-3xl h-64 w-full object-cover" referrerPolicy="no-referrer" />
           </div>
         </div>
       </section>
@@ -282,7 +282,7 @@ export const Home = () => {
             </div>
             <div className="reveal">
               <img 
-                src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Sessao-informacoes-importantes-scaled.jpg" 
+                src="/assets/images/sessao-informacoes.jpg" 
                 alt="Planejamento" 
                 className="rounded-[3rem] shadow-xl w-full h-[400px] object-cover"
                 referrerPolicy="no-referrer"
@@ -302,13 +302,13 @@ export const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
             <div className="h-80 bg-secondary/10 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-              <img src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Galeria-1-scaled.jpg" alt="Galeria 1" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+              <img src="/assets/images/galeria-1.jpg" alt="Galeria 1" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
             </div>
             <div className="h-80 bg-secondary/10 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-              <img src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Galeria-2-scaled.jpg" alt="Galeria 2" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+              <img src="/assets/images/galeria-2.jpg" alt="Galeria 2" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
             </div>
             <div className="h-80 bg-secondary/10 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-              <img src="https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/Galeria-3.jpg" alt="Galeria 3" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+              <img src="/assets/images/galeria-3.jpg" alt="Galeria 3" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
             </div>
           </div>
           
@@ -339,9 +339,9 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
-              "https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/1.png",
-              "https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/2.png",
-              "https://casaconceittoeventos.com.br/wp-content/uploads/2026/02/3.png"
+              "/assets/images/depoimento-1.png",
+              "/assets/images/depoimento-2.png",
+              "/assets/images/depoimento-3.png"
             ].map((imgUrl, idx) => (
               <div key={idx} className="reveal">
                 <img 
