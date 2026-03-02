@@ -13,63 +13,47 @@ const __dirname = path.dirname(__filename);
 async function startServer() {
   const app = express();
   const PORT = process.env.PORT || 3000;
-  const ENV = process.env.NODE_ENV || "development";
 
-  console.log(`[Server] Starting in ${ENV} mode...`);
-  console.log(`[Server] Directory: ${__dirname}`);
-
-  // API Route to fetch local gallery images
+  // 1. API Route for the Gallery
   app.get("/api/gallery", (req, res) => {
     const galleryDir = path.join(__dirname, "public", "assets", "images", "galeria");
-    
     try {
-      if (!fs.existsSync(galleryDir)) {
-        return res.json({ resources: [] });
-      }
-
+      if (!fs.existsSync(galleryDir)) return res.json({ resources: [] });
       const files = fs.readdirSync(galleryDir);
-      const imageExtensions = [".jpg", ".jpeg", ".png", ".webp", ".gif"];
       const images = files
-        .filter(file => imageExtensions.includes(path.extname(file).toLowerCase()))
+        .filter(file => [".jpg", ".jpeg", ".png", ".webp", ".gif"].includes(path.extname(file).toLowerCase()))
         .map(file => ({
           public_id: file,
           secure_url: `/assets/images/galeria/${file}`,
           created_at: fs.statSync(path.join(galleryDir, file)).birthtime
         }));
-
       images.sort((a, b) => b.created_at.getTime() - a.created_at.getTime());
       res.json({ resources: images });
     } catch (error) {
-      console.error("Error reading local gallery:", error);
-      res.status(500).json({ error: "Failed to fetch local gallery images" });
+      res.status(500).json({ error: "Failed to fetch gallery" });
     }
   });
 
-  // Serve static files from the public folder
-  app.use("/assets", express.static(path.join(__dirname, "public", "assets")));
+  // 2. Serve Gallery Images from public folder
+  app.use("/assets/images/galeria", express.static(path.join(__dirname, "public", "assets", "images", "galeria")));
 
+  // 3. Serve Site Assets (Production vs Development)
   const distPath = path.join(__dirname, "dist");
-  const isProduction = ENV === "production" || fs.existsSync(distPath);
+  const isProduction = fs.existsSync(distPath);
 
-  if (!isProduction) {
-    console.log("[Server] Using Vite middleware (Development)");
+  if (isProduction) {
+    console.log("[Server] Running in PRODUCTION mode");
+    app.use(express.static(distPath));
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(distPath, "index.html"));
+    });
+  } else {
+    console.log("[Server] Running in DEVELOPMENT mode");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
     });
     app.use(vite.middlewares);
-  } else {
-    console.log(`[Server] Serving static files from: ${distPath}`);
-    app.use(express.static(distPath));
-    
-    app.get("*", (req, res) => {
-      const indexPath = path.join(distPath, "index.html");
-      if (fs.existsSync(indexPath)) {
-        res.sendFile(indexPath);
-      } else {
-        res.status(404).send("Erro: Pasta 'dist' encontrada, mas 'index.html' não existe. Verifique se rodou 'npm run build'.");
-      }
-    });
   }
 
   app.listen(PORT, () => {
