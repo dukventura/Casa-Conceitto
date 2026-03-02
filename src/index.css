@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-primary: #322B24;
+  --color-secondary: #C2B49F;
+  --color-background: #F9F8F6;
+  --color-warmgray: #524C46;
+  --color-botanic: #3D4A3E;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-warmgray font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-primary;
+  }
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.bento-item {
+  @apply rounded-3xl overflow-hidden bg-white shadow-sm border border-secondary/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s infinite ease-in-out;
+}
