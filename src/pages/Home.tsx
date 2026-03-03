@@ -143,7 +143,7 @@ export const Home = () => {
       {/* IMAGE BREAK SECTION */}
       <section className="h-[60vh] relative overflow-hidden reveal">
         <img 
-          src="/assets/images/sessao-2.jpeg" 
+          src="/assets/images/sessao-2.jpg" 
           alt="Decoração de Casamento Imersiva" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
