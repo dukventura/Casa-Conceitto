@@ -59,7 +59,7 @@ export const DecoracaoCasamentos = () => {
     { title: 'Contemporâneo', img: '/assets/images/galeria-2.jpg' },
     { title: 'Clássico', img: '/assets/images/galeria-1.jpg' },
     { title: 'Minimalista', img: '/assets/images/sessao-2.jpg' },
-    { title: 'Temático', img: '/assets/images/Casa-Conceitto-Decoração-de-Casamentos-Hero.jpeg' },
+    { title: 'Temático', img: '/assets/casa%20conceitto%20decoracao%20de%20casamentos%20hero.jpeg' },
     { title: 'Elopement Wedding', img: '/assets/images/sessao-informacoes.jpg' },
   ];
 
@@ -69,7 +69,7 @@ export const DecoracaoCasamentos = () => {
       <section className="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/assets/images/Casa-Conceitto-Decoração-de-Casamentos-Hero.jpeg" 
+            src="/assets/casa%20conceitto%20decoracao%20de%20casamentos%20hero.jpeg" 
             alt="Decoração de Casamento" 
             className="w-full h-full object-cover opacity-30 grayscale-[0.2]"
             referrerPolicy="no-referrer"

@@ -12,6 +12,10 @@ export const Footer = () => {
               src="/assets/images/logo.webp" 
               alt="Casa Conceitto Logo" 
               className="h-16 w-auto object-contain mb-8 brightness-0 invert"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "https://picsum.photos/seed/casa-conceitto-logo/200/100?text=Logo";
+              }}
               referrerPolicy="no-referrer"
             />
             <h4 className="font-serif text-2xl mb-6 italic">Localização</h4>

@@ -32,6 +32,10 @@ export const Header = () => {
               src="/assets/images/logo.webp" 
               alt="Casa Conceitto Logo" 
               className="h-full w-auto object-contain"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "https://picsum.photos/seed/casa-conceitto-logo/200/100?text=Logo";
+              }}
               referrerPolicy="no-referrer"
             />
           </Link>

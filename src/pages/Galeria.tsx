@@ -142,6 +142,10 @@ export const Galeria = () => {
                     title={getSEOTags(idx)}
                     loading="lazy"
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = `https://picsum.photos/seed/gallery-${idx}/800/1000`;
+                    }}
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
