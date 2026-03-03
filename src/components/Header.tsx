@@ -29,7 +29,7 @@ export const Header = () => {
         <div className="flex items-center">
           <Link to="/" className="h-16 w-auto flex items-center">
             <img 
-              src="/assets/images/logo.png" 
+              src="/assets/images/logo.webp" 
               alt="Casa Conceitto Logo" 
               className="h-full w-auto object-contain"
               referrerPolicy="no-referrer"

@@ -9,7 +9,7 @@ export const Footer = () => {
           {/* Address */}
           <div className="reveal">
             <img 
-              src="/assets/images/logo.png" 
+              src="/assets/images/logo.webp" 
               alt="Casa Conceitto Logo" 
               className="h-16 w-auto object-contain mb-8 brightness-0 invert"
               referrerPolicy="no-referrer"
