@@ -76,7 +76,7 @@ export const Home = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/assets/images/hero-2.jpg" 
+            src="/assets/images/Casa-Conceitto-Decoração-de-Casamentos-Hero.jpeg" 
             alt="Mesa Posta Casa Conceitto" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
