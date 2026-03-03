@@ -238,7 +238,7 @@ export const Home = () => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4 reveal">
-            <img src="/assets/images/projeto-1.jpg" alt="Projeto 1" className="rounded-3xl h-64 w-full object-cover" referrerPolicy="no-referrer" />
+            <img src="/assets/images/projeto-1.jpeg" alt="Projeto 1" className="rounded-3xl h-64 w-full object-cover" referrerPolicy="no-referrer" />
             <img src="/assets/images/projeto-2.jpg" alt="Projeto 2" className="rounded-3xl h-64 w-full object-cover mt-8" referrerPolicy="no-referrer" />
             <img src="/assets/images/projeto-3.jpg" alt="Projeto 3" className="rounded-3xl h-64 w-full object-cover -mt-8" referrerPolicy="no-referrer" />
             <img src="/assets/images/projeto-4.jpg" alt="Projeto 4" className="rounded-3xl h-64 w-full object-cover" referrerPolicy="no-referrer" />
