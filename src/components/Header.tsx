@@ -72,7 +72,7 @@ export const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden absolute top-full left-0 w-full bg-background border-t border-secondary/10 transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-[400px] py-8' : 'max-h-0'}`}>
+      <div className={`absolute top-full left-0 w-full bg-background border-t border-secondary/10 transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-[400px] py-8' : 'max-h-0'}`}>
         <nav className="flex flex-col items-center space-y-6 text-[10px] font-semibold text-primary uppercase tracking-[0.2em]">
           {navLinks.map((link) => (
             link.href.startsWith('#') ? (

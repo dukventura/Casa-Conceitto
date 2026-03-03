@@ -1,36 +1,69 @@
 import React, { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { X, Award } from 'lucide-react';
+import { X, Award, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import axios from 'axios';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// ARRAY ESTÁTICO: Coloque aqui o nome exato das imagens que você subiu no GitHub!
-const galeriaImagens = [
-  { id: 1, url: '/assets/images/galeria/galeria-1.jpg' },
-  { id: 2, url: '/assets/images/galeria/galeria-2.jpg' },
-  { id: 3, url: '/assets/images/galeria/galeria-3.jpg' },
-  { id: 4, url: '/assets/images/galeria/galeria-4.jpg' },
-  { id: 5, url: '/assets/images/galeria/galeria-5.jpg' },
-  { id: 6, url: '/assets/images/galeria/galeria-6.jpg' }
-];
+interface CloudinaryResource {
+  public_id: string;
+  secure_url: string;
+  width: number;
+  height: number;
+  created_at: string;
+}
 
 export const Galeria = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [images, setImages] = useState<CloudinaryResource[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<CloudinaryResource | null>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.galeria-intro > *', {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out'
-      });
-    });
-    return () => ctx.revert();
+    const fetchImages = async () => {
+      try {
+        const response = await axios.get('/api/gallery');
+        if (response.data.error) {
+          console.error("Cloudinary API Error:", response.data.error);
+          setImages([]);
+        } else {
+          setImages(response.data.resources || []);
+        }
+      } catch (error: any) {
+        console.error("Error loading gallery:", error);
+        // Handle specific error from the backend
+        const backendError = error.response?.data?.error;
+        if (backendError) {
+          console.error("Backend Error Detail:", backendError);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchImages();
   }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      const ctx = gsap.context(() => {
+        gsap.from('.galeria-intro > *', {
+          y: 30,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: 'power3.out'
+        });
+      });
+      return () => ctx.revert();
+    }
+  }, [loading]);
+
+  // Function to get image URL (no longer needs Cloudinary transformations)
+  const getImageUrl = (url: string) => {
+    return url;
+  };
 
   // SEO Tag Generator
   const getSEOTags = (index: number) => {
@@ -59,7 +92,7 @@ export const Galeria = () => {
               <span className="italic">Inesquecíveis</span>
             </h1>
             <p className="text-warmgray text-lg md:text-xl font-light italic max-w-2xl">
-              Uma curadoria exclusiva dos nossos projetos mais marcantes, focada na essência de cada casal.
+              Uma curadoria exclusiva dos nossos projetos mais marcantes, focada
             </p>
           </div>
           
@@ -81,41 +114,54 @@ export const Galeria = () => {
 
       {/* GRID */}
       <section className="max-w-7xl mx-auto px-6 md:px-12">
-        <motion.div 
-          layout
-          className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
-        >
-          <AnimatePresence mode='popLayout'>
-            {galeriaImagens.map((image, idx) => (
-              <motion.div
-                key={image.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className="relative group cursor-pointer overflow-hidden rounded-3xl break-inside-avoid shadow-sm hover:shadow-xl transition-all duration-500"
-                onClick={() => setSelectedImage(image.url)}
-              >
-                <img 
-                  src={image.url} 
-                  alt={getSEOTags(idx)} 
-                  title={getSEOTags(idx)}
-                  loading="lazy"
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = `https://picsum.photos/seed/gallery-${idx}/800/1000`; // Imagem de fallback se der erro
-                  }}
-                />
-                <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                  <p className="text-secondary text-[10px] font-bold uppercase tracking-widest mb-2">Casa Conceitto</p>
-                  <h3 className="text-background text-xl font-serif italic">{getSEOTags(idx)}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-20">
+            <Loader2 className="text-secondary animate-spin mb-4" size={40} />
+            <p className="text-warmgray italic animate-pulse">Carregando nossa arte...</p>
+          </div>
+        ) : images.length > 0 ? (
+          <motion.div 
+            layout
+            className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
+          >
+            <AnimatePresence mode='popLayout'>
+              {images.map((image, idx) => (
+                <motion.div
+                  key={image.public_id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                  className="relative group cursor-pointer overflow-hidden rounded-3xl break-inside-avoid shadow-sm hover:shadow-xl transition-all duration-500"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <img 
+                    src={getImageUrl(image.secure_url)} 
+                    alt={getSEOTags(idx)} 
+                    title={getSEOTags(idx)}
+                    loading="lazy"
+                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = `https://picsum.photos/seed/gallery-${idx}/800/1000`;
+                    }}
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <p className="text-secondary text-[10px] font-bold uppercase tracking-widest mb-2">Casa Conceitto</p>
+                    <h3 className="text-background text-xl font-serif italic">{getSEOTags(idx)}</h3>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        ) : (
+          <div className="text-center py-20 border border-dashed border-secondary/20 rounded-[3rem]">
+            <p className="text-warmgray italic">Nenhuma imagem encontrada na pasta local.</p>
+            <p className="text-xs text-warmgray/60 mt-2">Adicione as fotos em /public/assets/images/galeria/</p>
+          </div>
+        )}
       </section>
 
       {/* LIGHTBOX */}
@@ -142,9 +188,10 @@ export const Galeria = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img 
-                src={selectedImage} 
+                src={getImageUrl(selectedImage.secure_url)} 
                 alt="Visualização ampliada" 
                 className="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+                referrerPolicy="no-referrer"
               />
               <div className="mt-8 text-center">
                 <p className="text-secondary text-xs font-bold uppercase tracking-[0.3em] mb-2">Casa Conceitto Eventos</p>

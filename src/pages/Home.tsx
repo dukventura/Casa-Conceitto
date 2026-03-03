@@ -134,7 +134,7 @@ export const Home = () => {
               referrerPolicy="no-referrer"
             />
             <div className="absolute -bottom-6 -right-6 bg-primary text-background p-8 rounded-[2rem] hidden md:block max-w-xs">
-              <p className="font-serif italic text-lg">"Casa Conceitto"</p>
+              <p className="font-serif italic text-lg">"Carla Mattos"</p>
             </div>
           </div>
         </div>
