@@ -95,7 +95,7 @@ export const DecoracaoCasamentos = () => {
             href="https://wa.me/5551999668012" 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-primary text-background px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-all duration-500 shadow-xl group"
+            className="inline-flex items-center justify-center bg-botanic text-white px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-all duration-500 shadow-xl group"
           >
             Quero uma decoração exclusiva <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
           </a>
