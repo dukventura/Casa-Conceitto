@@ -180,7 +180,7 @@ export const DecoracaoCasamentos = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24 reveal">
             <span className="text-secondary uppercase tracking-[0.4em] text-[10px] font-bold mb-4 block">Nossa Metodologia</span>
-            <h2 className="text-5xl md:text-7xl font-serif mb-8 leading-tight">Excelência em <br /> <span className="italic">cada etapa</span></h2>
+            <h2 className="text-5xl md:text-7xl font-serif mb-8 leading-tight text-white">Excelência em <br /> <span className="italic">cada etapa</span></h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 reveal">
