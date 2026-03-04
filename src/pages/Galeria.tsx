@@ -24,19 +24,9 @@ export const Galeria = () => {
     const fetchImages = async () => {
       try {
         const response = await axios.get('/api/gallery');
-        if (response.data.error) {
-          console.error("Cloudinary API Error:", response.data.error);
-          setImages([]);
-        } else {
-          setImages(response.data.resources || []);
-        }
+        setImages(response.data.resources || []);
       } catch (error: any) {
         console.error("Error loading gallery:", error);
-        // Handle specific error from the backend
-        const backendError = error.response?.data?.error;
-        if (backendError) {
-          console.error("Backend Error Detail:", backendError);
-        }
       } finally {
         setLoading(false);
       }

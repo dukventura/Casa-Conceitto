@@ -23,7 +23,7 @@ export const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled || !isHome ? 'bg-background shadow-sm py-3' : 'bg-transparent py-6'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled || !isHome ? 'bg-botanic shadow-sm py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
@@ -62,8 +62,8 @@ export const Header = () => {
           >
             Solicitar Orçamento
           </a>
-          <button 
-            className={`transition-colors duration-500 ${isScrolled || !isHome ? 'text-primary' : 'text-background'}`}
+          <button
+            className={`transition-colors duration-500 ${isScrolled || !isHome ? 'text-background' : 'text-background'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}

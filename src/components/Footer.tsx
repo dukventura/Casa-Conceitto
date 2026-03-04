@@ -8,9 +8,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20">
           {/* Address */}
           <div className="reveal">
-            <img 
-              src="/assets/images/logo.webp" 
-              alt="Casa Conceitto Logo" 
+            <img
+              src="/assets/logo.webp"
+              alt="Casa Conceitto Logo"
               className="h-16 w-auto object-contain mb-8 brightness-0 invert"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
