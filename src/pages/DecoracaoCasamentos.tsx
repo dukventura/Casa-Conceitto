@@ -1,14 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  Flower2,
-  ArrowRight,
-  CheckCircle2,
-  Star,
-  Sparkles,
-  Heart,
-  Layout,
-  Users
-} from 'lucide-react';
+import { Flower2, ArrowRight, CircleCheck as CheckCircle2, Star, Sparkles, Heart, LayoutGrid as Layout, Users } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'motion/react';

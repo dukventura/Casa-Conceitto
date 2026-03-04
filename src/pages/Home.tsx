@@ -1,21 +1,5 @@
 import React, { useEffect } from 'react';
-import { 
-  ChevronRight, 
-  Award, 
-  Flower2, 
-  Users, 
-  CheckCircle2,
-  ArrowRight,
-  ClipboardList,
-  Layout,
-  Clock,
-  Calendar,
-  CreditCard,
-  Info,
-  Truck,
-  Star,
-  ExternalLink
-} from 'lucide-react';
+import { ChevronRight, Award, Flower2, Users, CircleCheck as CheckCircle2, ArrowRight, ClipboardList, LayoutGrid as Layout, Clock, Calendar, CreditCard, Info, Truck, Star, ExternalLink } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
