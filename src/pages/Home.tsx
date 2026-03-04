@@ -91,11 +91,11 @@ export const Home = () => {
           <p className="text-background/90 text-lg md:text-2xl max-w-3xl mx-auto mb-12 font-light leading-relaxed italic">
             "Transformando o dia do SIM no momento mais lindo e especial da sua vida."
           </p>
-          <a 
-            href="https://wa.me/5551999668012?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento%20personalizado." 
+          <a
+            href="https://wa.me/5551999668012?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento%20personalizado."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-botanic text-white px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all duration-500 shadow-2xl"
+            className="inline-flex items-center gap-3 bg-botanic text-white px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:shadow-2xl transition-all duration-500 shadow-2xl"
           >
             Solicitar Orçamento Personalizado
           </a>

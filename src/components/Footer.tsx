@@ -29,9 +29,9 @@ export const Footer = () => {
           <div className="flex flex-col items-center reveal">
             <h4 className="font-serif text-2xl mb-6 italic">Navegação</h4>
             <ul className="space-y-4 text-center">
-              <li><a href="/" className="text-sm font-light hover:text-secondary transition-colors uppercase tracking-widest text-[10px]">Home</a></li>
-              <li><a href="/decoracao-casamentos" className="text-sm font-light hover:text-secondary transition-colors uppercase tracking-widest text-[10px]">Decoração</a></li>
-              <li><a href="/galeria" className="text-sm font-light hover:text-secondary transition-colors uppercase tracking-widest text-[10px]">Galeria</a></li>
+              <li><a href="/" onClick={(e) => {e.preventDefault(); window.location.href = '/'}} className="text-sm font-light hover:text-secondary transition-colors uppercase tracking-widest text-[10px]">Home</a></li>
+              <li><a href="/decoracao-casamentos" onClick={(e) => {e.preventDefault(); window.location.href = '/decoracao-casamentos'}} className="text-sm font-light hover:text-secondary transition-colors uppercase tracking-widest text-[10px]">Decoração</a></li>
+              <li><a href="/galeria" onClick={(e) => {e.preventDefault(); window.location.href = '/galeria'}} className="text-sm font-light hover:text-secondary transition-colors uppercase tracking-widest text-[10px]">Galeria</a></li>
             </ul>
           </div>
 

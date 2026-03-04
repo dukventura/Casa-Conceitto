@@ -1,20 +1,13 @@
 import React, { useEffect } from 'react';
-import { 
-  Award, 
-  Flower2, 
+import {
+  Flower2,
   ArrowRight,
   CheckCircle2,
   Star,
   Sparkles,
   Heart,
-  Camera,
-  MapPin,
   Layout,
-  Box,
-  Palette,
-  Users,
-  Search,
-  Truck
+  Users
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -199,21 +192,20 @@ export const DecoracaoCasamentos = () => {
             <h2 className="text-5xl md:text-7xl font-serif mb-8 leading-tight">Excelência em <br /> <span className="italic">cada etapa</span></h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 reveal">
             {[
-              { icon: <Search />, title: "Análise de Estilo", desc: "Identificamos a essência e o estilo que melhor representa o casal." },
-              { icon: <MapPin />, title: "Visita Técnica", desc: "Análise minuciosa do local para otimização de cada espaço." },
-              { icon: <Palette />, title: "Paleta de Cores", desc: "Definição harmônica de tons que guiarão toda a cenografia." },
-              { icon: <Users />, title: "Floristas Qualificados", desc: "Equipe especializada na execução de arranjos de alta costura." },
-              { icon: <Flower2 />, title: "Flores Naturais", desc: "Seleção das melhores espécies para um impacto visual orgânico." },
-              { icon: <Layout />, title: "Peças Próprias", desc: "Acervo exclusivo de mobiliário e objetos de decoração premium." }
-            ].map((step, i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-sm p-12 rounded-[3rem] border border-white/10 reveal hover:bg-white/10 transition-all duration-500 group">
-                <div className="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-background transition-all duration-500">
-                  {React.cloneElement(step.icon as React.ReactElement, { size: 28 })}
+              { icon: <CheckCircle2 />, title: "Orçamento", desc: "Envio do orçamento padrão ajustável às suas expectativas." },
+              { icon: <Users />, title: "Reunião", desc: "Alinhamento de ideias, referências e desejos (online ou presencial)." },
+              { icon: <CheckCircle2 />, title: "Contrato", desc: "Fechamento mediante pagamento da entrada." },
+              { icon: <Layout />, title: "Projeto", desc: "Início do desenvolvimento com visita técnica ao local." },
+              { icon: <Flower2 />, title: "Layout", desc: "Criação de moodboard com cores, flores e mobiliário." }
+            ].map((step, idx) => (
+              <div key={idx} className="bg-white p-8 rounded-[2rem] border border-secondary/10 flex flex-col items-center text-center hover:shadow-xl transition-all duration-500 group">
+                <div className="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background transition-colors duration-500">
+                  {step.icon}
                 </div>
-                <h4 className="text-xl font-serif italic mb-4 text-background">{step.title}</h4>
-                <p className="text-background/60 text-sm leading-relaxed">{step.desc}</p>
+                <h3 className="text-lg font-bold mb-3 uppercase tracking-widest text-primary">{step.title}</h3>
+                <p className="text-xs text-warmgray leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
