@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { X, Award, Loader2 } from 'lucide-react';
+import { X, Award, Loader as Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import axios from 'axios';
 
